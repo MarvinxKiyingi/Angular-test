@@ -7,20 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AComponent implements OnInit {
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getColorData();
+  }
 
   componentBgColor: string = 'component';
-  isPinkToggeled: boolean = false;
-
   changeBgColor(): void {
     if (this.componentBgColor === 'component') {
       this.componentBgColor = 'component pink';
-      this.isPinkToggeled = true;
-      console.log(this.isPinkToggeled);
+      this.saveColorData();
+      this.getColorData();
     } else {
       this.componentBgColor = 'component';
-      this.isPinkToggeled = false;
-      console.log(this.isPinkToggeled);
+      this.saveColorData();
+    }
+  }
+  saveColorData(): void {
+    localStorage.setItem('Component-A', this.componentBgColor);
+  }
+  getColorData(): void {
+    const getColor = localStorage.getItem('Component-A');
+    if (!getColor) {
+      localStorage.setItem('Component-A', this.componentBgColor);
+      this.componentBgColor = this.componentBgColor;
+    } else {
+      this.componentBgColor = getColor;
     }
   }
 }
