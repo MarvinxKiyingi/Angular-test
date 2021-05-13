@@ -1,4 +1,12 @@
 <div [class]="componentBgColor">
   <span class="component_title"> Component A </span>
+  <input
+    type="text"
+    placeholder="Type something"
+    #inputValue
+    (keyup)="handleChange(inputValue.value)"
+  />
   <button (click)="changeBgColor()">Click me!</button>
 </div>
+<app-b [valueFromParent]="printValue"></app-b>
+<! property binding >

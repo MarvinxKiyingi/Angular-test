@@ -1,4 +1,8 @@
 <div [class]="componentBgColor">
   <span class="component_title"> Component B </span>
+  <p>
+    {{ valueFromParent
+    }}<! interpolation >
+  </p>
   <button (click)="changeBgColor()">Click me!</button>
 </div>

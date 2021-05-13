@@ -12,6 +12,8 @@ export class AComponent implements OnInit {
   }
 
   componentBgColor: string = 'component';
+  printValue: string = '';
+
   changeBgColor(): void {
     if (this.componentBgColor === 'component') {
       this.componentBgColor = 'component pink';
@@ -33,5 +35,8 @@ export class AComponent implements OnInit {
     } else {
       this.componentBgColor = getColor;
     }
+  }
+  handleChange(iValue: string): void {
+    this.printValue = iValue;
   }
 }

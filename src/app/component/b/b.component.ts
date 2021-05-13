@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-b',
@@ -10,8 +10,8 @@ export class BComponent implements OnInit {
   ngOnInit(): void {
     this.getColorData();
   }
-
   componentBgColor: string = 'component';
+  @Input() valueFromParent: string;
   changeBgColor(): void {
     if (this.componentBgColor === 'component') {
       this.componentBgColor = 'component pink';
