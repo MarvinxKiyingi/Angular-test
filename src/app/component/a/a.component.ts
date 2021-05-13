@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {
-    this.getColorData();
+    this.getData();
   }
 
   componentBgColor: string = 'component';
@@ -17,26 +17,29 @@ export class AComponent implements OnInit {
   changeBgColor(): void {
     if (this.componentBgColor === 'component') {
       this.componentBgColor = 'component pink';
-      this.saveColorData();
-      this.getColorData();
+      this.saveData();
+      this.getData();
     } else {
       this.componentBgColor = 'component';
-      this.saveColorData();
+      this.saveData();
     }
   }
-  saveColorData(): void {
+  saveData(): void {
     localStorage.setItem('Component-A', this.componentBgColor);
+    localStorage.setItem('InputValue', this.printValue);
   }
-  getColorData(): void {
+  getData(): void {
     const getColor = localStorage.getItem('Component-A');
     if (!getColor) {
       localStorage.setItem('Component-A', this.componentBgColor);
       this.componentBgColor = this.componentBgColor;
     } else {
       this.componentBgColor = getColor;
+      this.printValue = this.printValue;
     }
   }
   handleChange(iValue: string): void {
     this.printValue = iValue;
+    this.saveData();
   }
 }

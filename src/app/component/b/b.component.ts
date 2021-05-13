@@ -8,29 +8,31 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {
-    this.getColorData();
+    this.getData();
   }
   componentBgColor: string = 'component';
   @Input() valueFromParent: string;
   changeBgColor(): void {
     if (this.componentBgColor === 'component') {
       this.componentBgColor = 'component pink';
-      this.saveColorData();
-      this.getColorData();
+      this.saveData();
+      this.getData();
     } else {
       this.componentBgColor = 'component';
-      this.saveColorData();
+      this.saveData();
     }
   }
-  saveColorData(): void {
+  saveData(): void {
     localStorage.setItem('Component-B', this.componentBgColor);
   }
-  getColorData(): void {
+  getData(): void {
     const getColor = localStorage.getItem('Component-B');
+    const getSavedInputValue = localStorage.getItem('InputValue');
     if (!getColor) {
       localStorage.setItem('Component-B', this.componentBgColor);
     } else {
       this.componentBgColor = getColor;
+      this.valueFromParent = getSavedInputValue;
     }
   }
 }
