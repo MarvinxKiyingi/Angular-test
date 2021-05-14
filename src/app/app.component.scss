@@ -1,3 +1,8 @@
 .component-wrapper {
   display: flex;
 }
+@media (max-width: 500px) {
+  .component-wrapper {
+    flex-direction: column;
+  }
+}
