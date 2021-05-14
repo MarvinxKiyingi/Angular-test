@@ -7,8 +7,33 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-right: 1rem;
+  border-radius: 50%;
+  .component_title {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  input {
+    margin: 1rem 0rem;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+  button {
+    padding: 0.2rem 0.5rem;
+  }
+  button:hover {
+    background-color: #b4b4b4;
+    color: white;
+    border: 2px solid white;
+  }
 }
 .pink {
-  background-color: #f197b6;
+  background-color: #fd95c9;
+  border: 3px solid white;
+}
+
+@media (max-width: 500px) {
+  .component {
+    margin-bottom: 50%;
+  }
 }
