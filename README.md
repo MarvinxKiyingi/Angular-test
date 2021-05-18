@@ -2,6 +2,10 @@
 
 This project was made to test my skills for a internship.
 
+## Live project
+
+https://friendly-ardinghelli-0200b0.netlify.app/
+
 ## To get started
 
 Run `ng serve -o` to open tha project. If for some reason your web browser wont open automatically be sure to Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
