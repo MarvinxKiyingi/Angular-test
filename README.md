@@ -4,7 +4,7 @@ This project was made to test my skills for a internship.
 
 ## Live project
 
-https://friendly-ardinghelli-0200b0.netlify.app/
+https://caspeco-test.netlify.app/
 
 ## To get started
 
